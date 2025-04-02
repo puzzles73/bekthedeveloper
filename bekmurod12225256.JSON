@@ -1,23 +1,19 @@
-{
-    "creator": "Bekmurod",
-    "projectDetails": {
-        "title": "Innovative JSON",
-        "purpose": "Design unique and personalized JSON code",
-        "language": "JSON"
-    },
-    "features": {
-        "keyFeature1": "Dynamic adaptability",
-        "keyFeature2": "Structured nesting",
-        "keyFeature3": "Streamlined integration"
-    },
-    "uniqueElements": {
-        "signatureBekmurod": "Always thinking outside the box!",
-        "customizationLevel": "High",
-        "collaborationStatus": "Independent Development"
-    },
-    "additionalNotes": [
-        "This file is a reflection of Bekmurod's style.",
-        "Encourages innovative and non-repetitive ideas.",
-        "Constructed for maximum differentiation."
-    ]
-}
+import json 
+import yaml 
+
+with open('Bekmurod.json', 'r') as json_file: 
+    myjson = json.load(json_file) 
+
+print("JSON content:") 
+print(json.dumps(myjson, indent=2)) 
+
+print("\nDetails:")
+print("Creator:", myjson['creator']) 
+print("Title:", myjson['projectDetails']['title']) 
+print("Features:")
+for key, value in myjson['features'].items(): 
+    print("- ", key, ":", value) 
+
+print("\nYAML view:")
+yaml.dump(myjson, default_flow_style=True) 
+
